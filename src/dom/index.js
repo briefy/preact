@@ -32,6 +32,13 @@ export function removeNode(node) {
  *	@param {Boolean} isSvg	Are we currently diffing inside an svg?
  *	@private
  */
+
+/**
+ * TODO: 
+ * 1. figure out can we use `data-my-specific-data`,
+ * 2. how should we apply `aria-`
+ * 3. how about micro data 
+ */
 export function setAccessor(node, name, old, value, isSvg) {
 	if (name==='className') name = 'class';
 

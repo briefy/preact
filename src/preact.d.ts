@@ -65,13 +65,13 @@ declare namespace preact {
 
 		abstract render(props?:PropsType & ComponentProps<this>, state?:StateType, context?:any):JSX.Element;
 	}
-	interface Component<PropsType, StateType> extends ComponentLifecycle<PropsType, StateType> { }
 
-	function h<PropsType>(node:ComponentConstructor<PropsType, any> | FunctionalComponent<PropsType>, params:PropsType, ...children:(JSX.Element|JSX.Element[]|string)[]):JSX.Element;
-	function h(node:string, params:JSX.HTMLAttributes&JSX.SVGAttributes&{[propName: string]: any}, ...children:(JSX.Element|JSX.Element[]|string)[]):JSX.Element;
-	function render(node:JSX.Element, parent:Element|Document, mergeWith?:Element):Element;
-	function rerender():void;
-	function cloneElement(element:JSX.Element, props:any):JSX.Element;
+	// briefy: createElement equivalence of facebook react
+	function h<PropsType>(node: ComponentConstructor<PropsType, any> | FunctionalComponent<PropsType>, params: PropsType, ...children: (JSX.Element | JSX.Element[] | string)[]): JSX.Element;
+	function h(node: string, params: JSX.HTMLAttributes & JSX.SVGAttributes & { [propName: string]: any }, ...children: (JSX.Element | JSX.Element[] | string)[]): JSX.Element;
+	function render(node: JSX.Element, parent: Element | Document, mergeWith?: Element): Element;
+	function rerender(): void;
+	function cloneElement(element: JSX.Element, props: any): JSX.Element;
 
 	var options:{
 		syncComponentUpdates?:boolean;

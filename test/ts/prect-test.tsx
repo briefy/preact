@@ -16,6 +16,7 @@ class DummyComponent extends Component<DummyProps, DummyState> {
 		}
 	}
 
+	// todo: what is the syntax of ts below
 	render({ initialInput }: DummyProps, { input }: DummyState) {
 		return <DummerComponent initialInput={initialInput} input={input} />
 	}

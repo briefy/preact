@@ -6,6 +6,9 @@ import { renderComponent } from './vdom/component';
 
 let items = [];
 
+/**
+ * briefy: rerender will be executed at the end of the event loop.
+ */
 export function enqueueRender(component) {
 	if (!component._dirty && (component._dirty = true) && items.push(component)==1) {
 		(options.debounceRendering || defer)(rerender);
