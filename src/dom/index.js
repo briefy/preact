@@ -33,11 +33,12 @@ export function removeNode(node) {
  *	@private
  */
 
-/**
+/**briefy
  * TODO: 
  * 1. figure out can we use `data-my-specific-data`,
  * 2. how should we apply `aria-`
  * 3. how about micro data 
+ * 4. where does the type="checkbox" assigned
  */
 export function setAccessor(node, name, old, value, isSvg) {
 	if (name==='className') name = 'class';
@@ -78,6 +79,8 @@ export function setAccessor(node, name, old, value, isSvg) {
 		}
 		(node._listeners || (node._listeners = {}))[name] = value;
 	}
+
+  // todo: what does list&type do here ? related to svg?
 	else if (name!=='list' && name!=='type' && !isSvg && name in node) {
 		setProperty(node, name, value==null ? '' : value);
 		if (value==null || value===false) node.removeAttribute(name);
